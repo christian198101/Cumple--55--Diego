@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Llegaron mis 55... ¡y hay que festejar!</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+   background:
+    linear-gradient(rgba(20,10,10,.65),rgba(20,10,10,.85)),
+    url('fondo55.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.card{
+    width:100%;
+    max-width:900px;
+    background:rgba(15,15,15,.55);
+    backdrop-filter:blur(12px);
+    border:2px solid rgba(212,175,55,.45);
+    border-radius:30px;
+    padding:60px 40px;
+    text-align:center;
+    box-shadow:0 0 35px rgba(0,0,0,.45);
+    animation:aparecer 1.2s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.decorative-line{
+    width:120px;
+    height:3px;
+    background:#d4af37;
+    margin:auto;
+    margin-bottom:35px;
+}
+
+h1{
+    font-family:'Playfair Display',serif;
+    font-size:4rem;
+    color:#ffd86b;
+    margin-bottom:25px;
+    line-height:1.2;
+    text-shadow:0 0 15px rgba(255,216,107,.4);
+}
+
+.subtitle{
+    max-width:700px;
+    margin:auto;
+    font-size:1.3rem;
+    line-height:1.9;
+    color:#f5f5f5;
+}
+
+.divider{
+    width:70%;
+    height:1px;
+    background:rgba(212,175,55,.3);
+    margin:40px auto;
+}
+
+.quote{
+    font-family:'Playfair Display',serif;
+    font-size:1.5rem;
+    font-style:italic;
+    margin-top:20px;
+    color:#ffd86b;
+}
+
+.buttons{
+    margin-top:35px;
+}
+
+.button{
+    display:inline-block;
+    margin:10px;
+    padding:16px 36px;
+    background:#d4af37;
+    color:#1b1207;
+    border:none;
+    border-radius:50px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.button:hover{
+    background:#ffd86b;
+    transform:translateY(-3px);
+    box-shadow:0 0 15px rgba(255,216,107,.45);
+}
+
+#cuentaRegresiva{
+    display:none;
+    margin-top:30px;
+    opacity:0;
+    transition:opacity .6s ease;
+}
+
+#regaloBox{
+    margin-top:25px;
+}
+
+@keyframes parpadeo{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.3;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+#contador{
+    max-width:750px;
+    margin:20px auto;
+}
+
+@media(max-width:768px){
+
+    .hero{
+        padding:15px;
+    }
+
+    .card{
+        padding:30px 18px;
+        border-radius:20px;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .subtitle{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    .quote{
+        font-size:1.15rem;
+    }
+
+    .buttons{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+    }
+
+    .button{
+        width:100%;
+        max-width:320px;
+        margin:0;
+        padding:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="card">
+
+<div class="decorative-line"></div>
+
+<h1>
+Llegaron mis 55...
+<br>
+¡y hay que festejar!
+</h1>
+
+<p class="subtitle">
+Una noche para brindar por los buenos momentos,
+la amistad y la alegría de vivir.
+Entre colegas, buena música, sabores inolvidables
+y el encanto de Sevilla, celebraremos juntos
+una velada única que quedará para siempre
+en el recuerdo.
+</p>
+
+<div class="divider"></div>
+
+<p class="quote">
+"Porque los mejores momentos de la vida no se cuentan...
+se celebran."
+</p>
+
+<div class="buttons">
+
+<button
+class="button"
+onclick="window.open('https://wa.me/34698987395?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20celebraci%C3%B3n%20de%20los%2055%20a%C3%B1os.%20%C2%A1Nos%20vemos!','_blank')">
+✅ Confirmar asistencia
+</button>
+
+<button
+class="button"
+onclick="mostrarCuentaRegresiva()">
+⏳ ¿Cuándo es?
+</button>
+
+<button
+class="button"
+onclick="window.open('https://www.google.com/maps/search/?api=1&query=Antonio+Machin+12+1+Sevilla','_blank')">
+📍 ¿Dónde es?
+</button>
+
+<button
+class="button"
+onclick="mostrarRegalo()">
+🎁 Regístrate y llévate un presente
+</button>
+
+</div>
+
+<div id="cuentaRegresiva"></div>
+
+<div id="regaloBox"></div>
+
+</div>
+
+</section>
+
+<script>
+function mostrarCuentaRegresiva(){
+
+    const cuenta =
+    document.getElementById("cuentaRegresiva");
+
+    cuenta.style.display = "block";
+
+    const fechaEvento =
+    new Date("2026-11-28T20:00:00").getTime();
+
+    cuenta.innerHTML = `
+        <h2 style="
+            color:#ffd86b;
+            margin-top:25px;
+            margin-bottom:15px;
+            font-family:'Playfair Display',serif;
+        ">
+            📅 Fecha del evento
+        </h2>
+
+        <div style="
+            color:#ffd86b;
+            font-size:1.5rem;
+            font-weight:bold;
+            margin-bottom:20px;
+        ">
+            🥂 Sábado 28 de noviembre de 2026<br>
+            🕗 20:00 hs
+        </div>
+
+        <div id="contador" style="
+            background:rgba(212,175,55,.18);
+            border:2px solid rgba(255,216,107,.35);
+            border-radius:25px;
+            max-width:750px;
+            margin:20px auto;
+            padding:25px;
+            color:white;
+            box-shadow:0 0 20px rgba(255,216,107,.15);
+        "></div>
+
+        <button
+        class="button"
+        style="
+            background:#666;
+            color:white;
+            margin-top:15px;
+        "
+        onclick="cerrarFecha()">
+        ❌ Cerrar
+        </button>
+    `;
+
+    const contador = setInterval(() => {
+
+        const ahora = new Date().getTime();
+        const diferencia = fechaEvento - ahora;
+
+        if(diferencia <= 0){
+
+            document.getElementById("contador").innerHTML =
+            "🎉 ¡Ha llegado el gran día!";
+
+            clearInterval(contador);
+            return;
+        }
+
+        const dias =
+        Math.floor(diferencia/(1000*60*60*24));
+
+        const horas =
+        Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+
+        const minutos =
+        Math.floor((diferencia%(1000*60*60))/(1000*60));
+
+        const segundos =
+        Math.floor((diferencia%(1000*60))/1000);
+
+        document.getElementById("contador").innerHTML = `
+        <div style="
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            flex-wrap:wrap;
+        ">
+            <div style="
+                min-width:120px;
+                padding:15px;
+                background:rgba(255,216,107,.12);
+                border-radius:15px;
+            ">
+                <div style="font-size:3rem;">${dias}</div>
+                <div>DÍAS</div>
+            </div>
+
+            <div style="
+                min-width:120px;
+                padding:15px;
+                background:rgba(255,216,107,.12);
+                border-radius:15px;
+            ">
+                <div style="font-size:3rem;">${horas}</div>
+                <div>HORAS</div>
+            </div>
+
+            <div style="
+                min-width:120px;
+                padding:15px;
+                background:rgba(255,216,107,.12);
+                border-radius:15px;
+            ">
+                <div style="font-size:3rem;">${minutos}</div>
+                <div>MINUTOS</div>
+            </div>
+
+            <div style="
+                min-width:120px;
+                padding:15px;
+                background:rgba(255,216,107,.12);
+                border-radius:15px;
+            ">
+                <div style="font-size:3rem;">${segundos}</div>
+                <div>SEGUNDOS</div>
+            </div>
+
+        </div>`;
+    },1000);
+
+    setTimeout(()=>{
+        cuenta.style.opacity = "1";
+    },50);
+}
+
+function cerrarFecha(){
+
+    const cuenta =
+    document.getElementById("cuentaRegresiva");
+
+    cuenta.style.opacity = "0";
+
+    setTimeout(()=>{
+        cuenta.style.display = "none";
+        cuenta.innerHTML = "";
+    },500);
+}
+
+function mostrarRegalo(){
+
+    const regalo =
+    document.getElementById("regaloBox");
+
+    regalo.style.display = "block";
+
+    regalo.innerHTML = `
+
+    <div style="
+        margin-top:30px;
+        background:rgba(212,175,55,.12);
+        border:2px solid rgba(255,216,107,.35);
+        border-radius:25px;
+        padding:25px;
+        max-width:650px;
+        margin-left:auto;
+        margin-right:auto;
+        color:white;
+    ">
+
+        <h2 style="
+            color:#ffd86b;
+            margin-bottom:15px;
+            font-family:'Playfair Display',serif;
+        ">
+            🎁 ¡Hay un presente para ti!
+        </h2>
+
+        <p style="
+            font-size:1.1rem;
+            margin-bottom:20px;
+            line-height:1.6;
+        ">
+            🎁 Indícame tu talla para tu sorpresa.
+        </p>
+
+        <div style="
+            font-size:1.5rem;
+            margin-bottom:12px;
+            animation:parpadeo 1s infinite;
+        ">
+            👇
+        </div>
+
+        <button
+        class="button"
+        onclick="window.open('https://wa.me/34698987395?text=Hola,%20mi%20talla%20es...','_blank')">
+            👕 Indicar mi talla
+        </button>
+
+        <br><br>
+
+        <button
+        class="button"
+        style="
+            background:#666;
+            color:white;
+        "
+        onclick="cerrarRegalo()">
+            ❌ Cerrar
+        </button>
+
+    </div>
+    `;
+}
+
+function cerrarRegalo(){
+
+    document.getElementById("regaloBox")
+    .innerHTML = "";
+
+}
+
+</script>
+
+</body>
+</html>
