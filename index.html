@@ -1,198 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Llegaron mis 55... ¡y hay que festejar!</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Llegaron mis 55... ¡y hay que festejar!
+</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'Montserrat',sans-serif;
-    min-height:100vh;
-    overflow-x:hidden;
-    color:white;
-   background:
-    linear-gradient(rgba(20,10,10,.65),rgba(20,10,10,.85)),
-    url('fondo55.jpg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+font-family:'Montserrat',sans-serif;
+color:white;
+overflow-x:hidden;
+
+background:
+linear-gradient(
+rgba(20,10,10,.65),
+rgba(20,10,10,.85)
+),
+url('fondo55.jpg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
 }
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:30px;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
 }
 
 .card{
-    width:100%;
-    max-width:900px;
-    background:rgba(15,15,15,.55);
-    backdrop-filter:blur(12px);
-    border:2px solid rgba(212,175,55,.45);
-    border-radius:30px;
-    padding:60px 40px;
-    text-align:center;
-    box-shadow:0 0 35px rgba(0,0,0,.45);
-    animation:aparecer 1.2s ease;
-}
+width:100%;
+max-width:900px;
 
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(12px);
 
+padding:60px 40px;
+
+border-radius:30px;
+
+text-align:center;
+
+border:2px solid rgba(212,175,55,.40);
+}
 .decorative-line{
-    width:120px;
-    height:3px;
-    background:#d4af37;
-    margin:auto;
-    margin-bottom:35px;
+width:120px;
+height:3px;
+background:#d4af37;
+margin:auto;
+margin-bottom:30px;
 }
 
 h1{
-    font-family:'Playfair Display',serif;
-    font-size:4rem;
-    color:#ffd86b;
-    margin-bottom:25px;
-    line-height:1.2;
-    text-shadow:0 0 15px rgba(255,216,107,.4);
+font-family:'Playfair Display',serif;
+font-size:4rem;
+color:#ffd86b;
+margin-bottom:25px;
 }
 
 .subtitle{
-    max-width:700px;
-    margin:auto;
-    font-size:1.3rem;
-    line-height:1.9;
-    color:#f5f5f5;
-}
-
-.divider{
-    width:70%;
-    height:1px;
-    background:rgba(212,175,55,.3);
-    margin:40px auto;
+font-size:1.3rem;
+line-height:1.8;
 }
 
 .quote{
-    font-family:'Playfair Display',serif;
-    font-size:1.5rem;
-    font-style:italic;
-    margin-top:20px;
-    color:#ffd86b;
+margin-top:30px;
+font-size:1.5rem;
+font-style:italic;
+color:#ffd86b;
 }
 
 .buttons{
-    margin-top:35px;
+margin-top:40px;
 }
 
 .button{
-    display:inline-block;
-    margin:10px;
-    padding:16px 36px;
-    background:#d4af37;
-    color:#1b1207;
-    border:none;
-    border-radius:50px;
-    font-size:1rem;
-    font-weight:700;
-    cursor:pointer;
-    transition:.3s;
+display:inline-block;
+margin:10px;
+padding:16px 36px;
+background:#d4af37;
+color:#1b1207;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:700;
+transition:.3s;
 }
 
 .button:hover{
-    background:#ffd86b;
-    transform:translateY(-3px);
-    box-shadow:0 0 15px rgba(255,216,107,.45);
+background:#ffd86b;
+transform:translateY(-3px);
 }
-
-#cuentaRegresiva{
-    display:none;
-    margin-top:30px;
-    opacity:0;
-    transition:opacity .6s ease;
-}
-
+#cuentaRegresiva,
 #regaloBox{
-    margin-top:25px;
+margin-top:25px;
 }
 
-@keyframes parpadeo{
+#btnMusica{
+position:fixed;
+bottom:25px;
+right:25px;
 
-    0%{
-        opacity:1;
-    }
+width:80px;
+height:80px;
 
-    50%{
-        opacity:.3;
-    }
+border:none;
+border-radius:50%;
 
-    100%{
-        opacity:1;
-    }
+cursor:pointer;
 
+font-size:32px;
+
+z-index:99999;
+
+background:
+linear-gradient(
+135deg,
+#d4af37,
+#ffd86b
+);
+
+box-shadow:
+0 0 25px rgba(255,216,107,.5);
 }
-#contador{
-    max-width:750px;
-    margin:20px auto;
+
+#btnMusica.reproduciendo{
+animation:girar 8s linear infinite;
+}
+
+@keyframes girar{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
 }
 
 @media(max-width:768px){
 
-    .hero{
-        padding:15px;
-    }
+h1{
+font-size:2.2rem;
+}
 
-    .card{
-        padding:30px 18px;
-        border-radius:20px;
-    }
+.subtitle{
+font-size:1rem;
+}
 
-    h1{
-        font-size:2.2rem;
-    }
-
-    .subtitle{
-        font-size:1rem;
-        line-height:1.7;
-    }
-
-    .quote{
-        font-size:1.15rem;
-    }
-
-    .buttons{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:10px;
-    }
-
-    .button{
-        width:100%;
-        max-width:320px;
-        margin:0;
-        padding:15px;
-    }
+.button{
+width:100%;
+max-width:320px;
+}
 
 }
 
@@ -200,7 +174,6 @@ h1{
 </head>
 
 <body>
-
 <section class="hero">
 
 <div class="card">
@@ -208,51 +181,59 @@ h1{
 <div class="decorative-line"></div>
 
 <h1>
+
 Llegaron mis 55...
 <br>
 ¡y hay que festejar!
+
 </h1>
 
 <p class="subtitle">
-Una noche para brindar por los buenos momentos,
-la amistad y la alegría de vivir.
-Entre colegas, buena música, sabores inolvidables
-y el encanto de Sevilla, celebraremos juntos
-una velada única que quedará para siempre
-en el recuerdo.
+
+Una noche para brindar
+por los buenos momentos,
+la amistad,
+la buena música
+y la alegría de vivir.
+
 </p>
 
-<div class="divider"></div>
-
 <p class="quote">
-"Porque los mejores momentos de la vida no se cuentan...
+
+"Porque los mejores momentos
+de la vida no se cuentan...
 se celebran."
+
 </p>
 
 <div class="buttons">
 
-<button
-class="button"
-onclick="window.open('https://wa.me/34698987395?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20celebraci%C3%B3n%20de%20los%2055%20a%C3%B1os.%20%C2%A1Nos%20vemos!','_blank')">
+<button class="button"
+onclick="window.open('https://wa.me/34698987395?text=Hola,%20confirmo%20mi%20asistencia','_blank')">
+
 ✅ Confirmar asistencia
+
 </button>
 
-<button
-class="button"
+<button class="button"
 onclick="mostrarCuentaRegresiva()">
+
 ⏳ ¿Cuándo es?
+
 </button>
 
-<button
-class="button"
+<button class="button"
 onclick="window.open('https://www.google.com/maps/search/?api=1&query=Antonio+Machin+12+1+Sevilla','_blank')">
+
 📍 ¿Dónde es?
+
 </button>
 
-<button
-class="button"
+<button class="button"
 onclick="mostrarRegalo()">
+
 🎁 Regístrate y llévate un presente
+
 </button>
 
 </div>
@@ -261,231 +242,285 @@ onclick="mostrarRegalo()">
 
 <div id="regaloBox"></div>
 
+<div id="popup55"></div>
+
 </div>
 
 </section>
+<audio id="musicaFondo" loop>
+
+<source
+src="musica.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<button
+id="btnMusica"
+onclick="toggleMusica()">
+
+🎵
+
+</button>
 
 <script>
+
+let temporizador55;
+
 function mostrarCuentaRegresiva(){
 
-    const cuenta =
-    document.getElementById("cuentaRegresiva");
+const caja =
+document.getElementById(
+"cuentaRegresiva"
+);
 
-    cuenta.style.display = "block";
+caja.style.display="block";
 
-    const fechaEvento =
-    new Date("2026-11-28T20:00:00").getTime();
+const fechaEvento =
+new Date(
+"2026-11-28T20:00:00"
+).getTime();
 
-    cuenta.innerHTML = `
-        <h2 style="
-            color:#ffd86b;
-            margin-top:25px;
-            margin-bottom:15px;
-            font-family:'Playfair Display',serif;
-        ">
-            📅 Fecha del evento
-        </h2>
+clearInterval(
+temporizador55
+);
 
-        <div style="
-            color:#ffd86b;
-            font-size:1.5rem;
-            font-weight:bold;
-            margin-bottom:20px;
-        ">
-            🥂 Sábado 28 de noviembre de 2026<br>
-            🕗 20:00 hs
-        </div>
+temporizador55 =
+setInterval(function(){
+const ahora =
+new Date().getTime();
 
-        <div id="contador" style="
-            background:rgba(212,175,55,.18);
-            border:2px solid rgba(255,216,107,.35);
-            border-radius:25px;
-            max-width:750px;
-            margin:20px auto;
-            padding:25px;
-            color:white;
-            box-shadow:0 0 20px rgba(255,216,107,.15);
-        "></div>
+const diferencia =
+fechaEvento-ahora;
 
-        <button
-        class="button"
-        style="
-            background:#666;
-            color:white;
-            margin-top:15px;
-        "
-        onclick="cerrarFecha()">
-        ❌ Cerrar
-        </button>
-    `;
+const dias =
+Math.floor(diferencia/(1000*60*60*24));
 
-    const contador = setInterval(() => {
+const horas =
+Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
 
-        const ahora = new Date().getTime();
-        const diferencia = fechaEvento - ahora;
+const minutos =
+Math.floor((diferencia%(1000*60*60))/(1000*60));
 
-        if(diferencia <= 0){
+const segundos =
+Math.floor((diferencia%(1000*60))/1000);
 
-            document.getElementById("contador").innerHTML =
-            "🎉 ¡Ha llegado el gran día!";
+caja.innerHTML=`
 
-            clearInterval(contador);
-            return;
-        }
+<h2 style="color:#ffd86b;">
+📅 Sábado 28 de noviembre de 2026
+</h2>
 
-        const dias =
-        Math.floor(diferencia/(1000*60*60*24));
+<h3>🕗 20:00 hs</h3>
 
-        const horas =
-        Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+<div style="
+font-size:2rem;
+font-weight:bold;
+margin-top:20px;
+">
 
-        const minutos =
-        Math.floor((diferencia%(1000*60*60))/(1000*60));
+${dias}d ${horas}h ${minutos}m ${segundos}s
 
-        const segundos =
-        Math.floor((diferencia%(1000*60))/1000);
+</div>
 
-        document.getElementById("contador").innerHTML = `
-        <div style="
-            display:flex;
-            justify-content:center;
-            gap:15px;
-            flex-wrap:wrap;
-        ">
-            <div style="
-                min-width:120px;
-                padding:15px;
-                background:rgba(255,216,107,.12);
-                border-radius:15px;
-            ">
-                <div style="font-size:3rem;">${dias}</div>
-                <div>DÍAS</div>
-            </div>
+<br>
 
-            <div style="
-                min-width:120px;
-                padding:15px;
-                background:rgba(255,216,107,.12);
-                border-radius:15px;
-            ">
-                <div style="font-size:3rem;">${horas}</div>
-                <div>HORAS</div>
-            </div>
+<button class="button"
+onclick="cerrarFecha()">
 
-            <div style="
-                min-width:120px;
-                padding:15px;
-                background:rgba(255,216,107,.12);
-                border-radius:15px;
-            ">
-                <div style="font-size:3rem;">${minutos}</div>
-                <div>MINUTOS</div>
-            </div>
+❌ Cerrar
 
-            <div style="
-                min-width:120px;
-                padding:15px;
-                background:rgba(255,216,107,.12);
-                border-radius:15px;
-            ">
-                <div style="font-size:3rem;">${segundos}</div>
-                <div>SEGUNDOS</div>
-            </div>
+</button>
+`;
 
-        </div>`;
-    },1000);
+},1000);
 
-    setTimeout(()=>{
-        cuenta.style.opacity = "1";
-    },50);
 }
 
 function cerrarFecha(){
 
-    const cuenta =
-    document.getElementById("cuentaRegresiva");
+clearInterval(temporizador55);
 
-    cuenta.style.opacity = "0";
+document.getElementById(
+"cuentaRegresiva"
+).innerHTML="";
 
-    setTimeout(()=>{
-        cuenta.style.display = "none";
-        cuenta.innerHTML = "";
-    },500);
+document.getElementById(
+"cuentaRegresiva"
+).style.display="none";
+
 }
 
 function mostrarRegalo(){
 
-    const regalo =
-    document.getElementById("regaloBox");
+document.getElementById(
+"regaloBox"
+).innerHTML=`
 
-    regalo.style.display = "block";
+<div style="
+background:rgba(212,175,55,.15);
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+">
 
-    regalo.innerHTML = `
+<h2 style="color:#ffd86b;">
+🎁 Hay un regalo para ti
+</h2>
 
-    <div style="
-        margin-top:30px;
-        background:rgba(212,175,55,.12);
-        border:2px solid rgba(255,216,107,.35);
-        border-radius:25px;
-        padding:25px;
-        max-width:650px;
-        margin-left:auto;
-        margin-right:auto;
-        color:white;
-    ">
+<p>
+Indícame tu talla para prepararlo.
+</p>
 
-        <h2 style="
-            color:#ffd86b;
-            margin-bottom:15px;
-            font-family:'Playfair Display',serif;
-        ">
-            🎁 ¡Hay un presente para ti!
-        </h2>
+<br>
 
-        <p style="
-            font-size:1.1rem;
-            margin-bottom:20px;
-            line-height:1.6;
-        ">
-            🎁 Indícame tu talla para tu sorpresa.
-        </p>
+<button class="button"
+onclick="window.open('https://wa.me/34698987395?text=Mi%20talla%20es...','_blank')">
 
-        <div style="
-            font-size:1.5rem;
-            margin-bottom:12px;
-            animation:parpadeo 1s infinite;
-        ">
-            👇
-        </div>
+👕 Indicar mi talla
 
-        <button
-        class="button"
-        onclick="window.open('https://wa.me/34698987395?text=Hola,%20mi%20talla%20es...','_blank')">
-            👕 Indicar mi talla
-        </button>
+</button>
 
-        <br><br>
+<br><br>
 
-        <button
-        class="button"
-        style="
-            background:#666;
-            color:white;
-        "
-        onclick="cerrarRegalo()">
-            ❌ Cerrar
-        </button>
+<button class="button"
+style="background:#666;color:white;"
+onclick="cerrarRegalo()">
 
-    </div>
-    `;
+❌ Cerrar
+
+</button>
+
+</div>
+
+`;
+
 }
 
 function cerrarRegalo(){
 
-    document.getElementById("regaloBox")
-    .innerHTML = "";
+document.getElementById(
+"regaloBox"
+).innerHTML="";
 
 }
+
+function toggleMusica(){
+
+const audio =
+document.getElementById(
+"musicaFondo"
+);
+
+const boton =
+document.getElementById(
+"btnMusica"
+);
+
+if(audio.paused){
+
+audio.play();
+
+boton.innerHTML="🔊";
+
+boton.classList.add(
+"reproduciendo"
+);
+
+}else{
+
+audio.pause();
+
+boton.innerHTML="🎵";
+
+boton.classList.remove(
+"reproduciendo"
+);
+
+}
+
+}
+
+function mostrarPopup55(){
+
+document.getElementById("popup55").innerHTML=`
+
+<div style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.88);
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:999999;
+">
+
+<div style="
+max-width:700px;
+width:100%;
+background:#111;
+padding:20px;
+border-radius:25px;
+text-align:center;
+border:2px solid #d4af37;
+">
+
+<h2 style="
+color:#ffd86b;
+margin-bottom:20px;
+">
+
+🎉 ¡A festejar mis 55 chavales!
+
+</h2>
+
+<img
+src="foto55.jpg"
+style="
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
+">
+
+<button
+class="button"
+onclick="cerrarPopup55()">
+
+❌ Cerrar
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+function cerrarPopup55(){
+
+document.getElementById(
+"popup55"
+).innerHTML="";
+
+}
+
+window.addEventListener(
+"load",
+function(){
+
+setTimeout(function(){
+
+mostrarPopup55();
+
+},1000);
+
+});
 
 </script>
 
